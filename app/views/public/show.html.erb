@@ -1,0 +1,24 @@
+<%= link_to "Back to list", {:action => 'index'} %>
+<br>
+<br>
+
+
+<br>
+<br>
+<h1 align="center">
+Subjects </h1>
+<br>
+<br>
+<% @subject.each do |subject| %>
+  <div class="section" align="center">
+  	
+    <%# link_to subject.name, assignment_path(subject.name) %>
+    <%= link_to subject.name, {:controller => 'assignments', :action => 'show',:id => params[:id], :subj_id=>subject.id } %>
+     </div>
+          <br >
+          <br>
+          
+          <br>
+          
+         </div>
+<% end %>

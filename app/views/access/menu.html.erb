@@ -1,0 +1,14 @@
+	<% @page_title = "Admin Menu" %>
+
+	<div class="menu" style="margin:50px auto; padding-left: 500px;">
+	  <h2>Admin Menu</h2>
+	  <div class="identity">Logged in as: <%= session[:username] %></div> <br>
+	  <ul>
+	    <li><%= link_to "Manage Subjects", subjects_path %></li>
+	     <%# link_to "Manage Teachers", teachers_path %> 
+	     <%# link_to "Manage Students", students_path %> 
+	   	    <li><%= link_to("Manage Admin Users", admin_users_path) %></li>
+	   	     <li><%= link_to("Manage Users", users_path) %></li>
+	    <li><%= link_to("Logout",:action =>'logout') %></li>
+	  </ul> 
+	</div>

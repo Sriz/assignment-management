@@ -1,0 +1,37 @@
+<%= link_to("Add a new teacher", {:action => 'new'}) %>
+
+<div class="subject list">
+  <h2>Teachers</h2>
+  
+    
+<br />
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Photo</th>
+    </tr>
+      <% @teachers.each do |teacher| %>
+    <tr>
+      <td><%= teacher.first_name %></td>
+      <td><%= teacher.last_name %></td>
+      <td><%= teacher.email %></td>
+      <td><%= teacher.address %></td>
+      <td><%= teacher.phone %></td>
+      <td><%= teacher.avatar_file_name %></td>
+      
+      <td class="actions">
+     
+        <%= link_to 'Show', teacher_path(teacher) %>
+          <%= link_to 'Edit', edit_teacher_path(teacher) %>
+        <%= link_to "Delete", teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?'} %>
+
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

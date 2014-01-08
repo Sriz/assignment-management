@@ -1,0 +1,26 @@
+<% @page_title = "Edit Admin User: #{@user.email}" -%>
+
+<%= link_to "<< Back to List", users_path %>
+
+<div class="user edit">
+  <h2>Edit Admin User</h2>
+
+  <%= form_for :user , :url => user_path(@user), :method=> :patch do |f| %>
+    <table summary="Subject form fields">	<table summary="Admin user form fields">
+ <tr>
+    <th><%= f.label(:email) %></th>
+    <td><%= f.text_field(:email) %></td>
+  </tr>
+ <tr>
+    <th><%= f.label(:role) %></th>
+    <td><%= f.text_field(:role) %></td>
+  </tr>
+ 
+ 
+</table>
+	
+  	<div class="form-buttons">
+  	  <%= submit_tag('Update User') %>
+    </div>
+  <% end %>
+</div>

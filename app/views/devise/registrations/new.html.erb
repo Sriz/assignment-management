@@ -1,0 +1,49 @@
+<h2 align="center">Sign up</h2>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+<div class="row">
+
+  <div class="large-4 large-offset-4 columns"><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+</div>
+<div class="row">
+    <div class="large-4 large-offset-4 columns"><%= f.label :first_name %><br />
+  <%= f.text_field :first_name %></div>
+ 
+ <div class="row">
+  <div class="large-4 large-offset-4 columns"><%= f.label :last_name %><br />
+  <%= f.text_field :last_name %></div>
+
+<div class="row">
+  <div class="large-4 large-offset-4 columns"><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+</div>
+
+
+
+
+ <div class="row">
+
+  <div class="large-4 large-offset-4 columns"><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+ </div>
+ </div>
+ <div class="row">
+ <div class="large-4 columns large-offset-4 columns"><%= f.label :class_roll_no%><br />
+  <%= f.text_field :class_roll_no %></div>
+  </div>
+<div class="row">
+  <div class="large-4 large-offset-4 columns">  <%= f.label :batch_id %> <br />
+    <%= f.select(:batch_id, ["2009","2010", "2011","2012", "2013"]) %>
+</div>
+</div>
+<div class="row">
+  <div class="large-4 large-offset-4 columns"><%= f.label :gender %><br />
+  <%= f.radio_button(:gender, "Male")%> Male &nbsp; <%=  f.radio_button(:gender, "Female") %> Female</div>
+ </div>
+<div class="row">
+  <div class="large-4 large-offset-4 columns"><%= f.submit "Sign up" %></div>
+</div>
+<% end %>
+<%# render "devise/shared/links" %>
+</div>

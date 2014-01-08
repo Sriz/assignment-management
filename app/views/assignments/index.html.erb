@@ -1,0 +1,19 @@
+<%= link_to "Back", {:controller=>'public', :action => 'index'}  %>
+<br />
+<br />
+<br />
+
+<% if can? :add, @assignment %><%= link_to("Add a new assignment", {:action => 'new'}) %><br/><br/>
+<br/>
+<br/>
+<%= link_to("View submitted assignments", {:controller => 'assignment_edits', :action => 'view'}) %>
+
+<% end %>
+<div class="subject list">
+  <h2 align="center">Assignments</h2>
+  
+    <%= link_to("Go to subjects", public_path(params[:id])) %>
+<br />
+
+    
+</div>

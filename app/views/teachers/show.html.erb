@@ -1,0 +1,52 @@
+<div class="subject show" style ="margin: 0 auto;">
+ <%= link_to "Back to list", teachers_path %>
+  <h2>Show Teachers</h2>
+
+  <table summary="Student detail view">
+    <tr>
+      <th>First Name</th>
+      <td><%= @teacher.first_name %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= @teacher.last_name %></td>
+    </tr>
+    <tr>
+
+
+
+
+
+
+
+
+
+
+        <th>Gender</th>
+        
+         <td><%= @teacher.gender %></td> 
+      
+      </tr>
+       <tr>
+        <th>Address</th>
+        <td><%= @teacher.address %></td>
+      </tr>
+      <tr>
+         <tr>
+        <th>Phone</th>
+        <td><%= @teacher.phone %></td>
+      </tr>
+      <tr>
+         <tr>
+        <th>Email</th>
+        <td><%= @teacher.email %></td>
+      </tr>
+      <tr>
+        <tr>
+          <th> Photo </th>
+          <td> <%= image_tag @teacher.avatar.url %></td>
+    </tr> 
+  </table>
+  
+</div>
+</div>

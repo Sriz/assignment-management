@@ -1,0 +1,39 @@
+<html>
+<%= link_to "Back", assignment_path( :id => params[:id],:name =>params[:name], :subj_id=> params[:subj_id]) %>
+<br>
+<br>
+
+ <%= form_for(:assignment_edits, :url => {:action => 'create', :id =>params[:id]}, :html => { :multipart => true}) do |f| %>
+<table>
+<tr> 
+<th>    <%= f.label :user_id %> </th>
+<td>    <%= f.select(:user_id, [current_user.id]) %> </td>
+</tr>
+<tr>
+
+    <th> <%=f.label :assignment_id %> </th>
+<td>
+ <%= f.select(:assignment_id, [params[:id]]) %> </td>
+ </tr>
+
+ <tr>
+     <th> <%=f.label :subject_id %> </th>
+<td>
+
+ <%= f.select(:subject_id, [params[:subj_id]]) %>
+</td>
+</tr>
+
+
+     <tr>
+          <th> Upload </th>
+          <td> <%= f.file_field(:avatar) %> </td>
+          </tr>
+     <tr>
+     <td colspan=2>     
+                     <%= submit_tag("Upload yo!") %> </td>
+                     </tr>
+
+                      
+          <% end %>
+          </html>

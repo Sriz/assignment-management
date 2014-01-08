@@ -1,0 +1,52 @@
+
+<%= link_to"<< Back to List", students_path %>
+
+<div class="student edit">
+  <h2>Update Student</h2>
+ <%= form_for :student , :url => student_path(@student), :method=> :patch do |f| %>
+    <table summary="Subject form fields">
+      <tr>
+        <th>First Name</th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th>DOB</th>
+        <td><%= f.text_field(:date_of_birth) %></td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td>
+          <%= f.radio_button("gender", "male") %> Male <br>
+          <%= f.radio_button("gender", "female") %>Female
+          
+        </td>
+      </tr>
+       <tr>
+        <th>Address</th>
+        <td><%= f.text_field(:address) %></td>
+      </tr>
+      <tr>
+         <tr>
+        <th>Phone</th>
+        <td><%= f.phone_field(:phone) %></td>
+      </tr>
+      <tr>
+         <tr>
+        <th>Email</th>
+        <td> <%= f.email_field(:email) %></td>
+      </tr>
+      <tr>
+        <tr>
+          <th> Photo </th>
+          <td> <%= f.file_field(:avatar) %> </td>
+    </table>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Subject") %>
+    </div>
+    
+  <% end %>

@@ -1,0 +1,26 @@
+
+<%= link_to"<< Back to List", subjects_path %>
+
+<div class="subject edit">
+  <h2>Update Subject</h2>
+ <%= form_for :subject , :url => subject_path(@subject), :method=> :patch do |f| %>
+    <table summary="Subject form fields">
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:name) %></td>
+      </tr>
+      <tr>
+        <th>Semester</th>
+        <td><%= f.text_field(:semester) %></td>
+      </tr>
+      <tr>
+        <th>Visible</th>
+        <td><%= f.text_field(:visible) %></td>
+      </tr>
+    </table>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Subject") %>
+    </div>
+    
+  <% end %>

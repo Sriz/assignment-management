@@ -1,0 +1,12 @@
+ &nbsp;&nbsp;&nbsp;<%= link_to "Back", assignment_path(params[:name], :subj_id=> params[:subj_id]) %><br/>
+
+  <table>
+      <% @assign.each do |a| %> 
+      <tr>
+      	<th> File Name: </th>
+    <td> <%= a.avatar_file_name %><td> 
+    	<td>
+    		    <% a.avatar.url%> 
+     <%=link_to "Download", {:controller => "assignment_edits", :action => "download", :id=>a.id} %> </td> </tr>
+      <% end %>
+  

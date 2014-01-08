@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "School" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "School" %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  
+
+
+
+<nav class="top-bar" data-topbar> 
+
+  <ul class="title-area"> 
+    <li class="name"> 
+      <h1><a href="#">College Assignment Management System</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon">
+      <a href="#"></a>
+    </li> 
+  </ul> 
+  <section class="top-bar-section">
+           <!-- Right Nav Section --> 
+    <ul class="right"> 
+<li class="active">
+    
+        <a href="#">
+          <% if user_signed_in? %> <a href="#"> Signed in as <%= current_user.email %></a>
+        </a> 
+         </li>
+      
+    
+          <li>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              </li> 
+         </ul>  
+          <% #else %>
+          
+  <%#  link_to "Sign up", new_user_registration_path %>  <%# link_to "sign in", new_user_session_path %>      
+          <% end %>
+</section> 
+         </nav>
+
+    <body>
+
+    <main role="main">
+      <p class="notice"> <%=notice %> </p>
+      <p class = "alert"> <%= alert %> </p>
+    <%= yield %>
+    
+    </main>
+  </body>
+    
+</html>

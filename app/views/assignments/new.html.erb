@@ -1,0 +1,43 @@
+
+<%=link_to "<< Back to List", {:action =>'show',:id => params[:id], :name=>params[:name],:subj_id=> params[:subj_id]} %>
+
+<div class="subject new"> </div>
+  <h2>Add a New Assignment </h2>
+ <table summary="Assignment information">
+  
+  <%= form_for(:assignment, :url => {:action => 'create', :id =>params[:id], :subj_id=>params[:subj_id]}) do |f| %>
+  
+       <tr>
+        <th><%= f.label :title%></th>
+        <td><%= f.text_field(:title) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :body %></th>
+        <td><%= f.text_area(:body) %></td>
+      </tr>
+       <tr>
+        <th><%= f.label :marks_Assigned%></th>
+        <td><%= f.text_field(:marks) %></td>
+      </tr>
+     
+<tr>
+        <th><%= f.label :deadline %></th>
+        <td><%= f.datetime_select(:deadline) %></td>
+      </tr>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <tr>
+      <th> <%= f.label :subject_id %> </td>
+        <td>
+
+<%= f.collection_select(:subject_id, Subject.all, :id, :name) %>
+</td>
+</tr>
+
+       <tr>
+    <th colspan=2>
+      <%= submit_tag("Add Assignment") %>
+    </th> </tr>
+   </table> 
+  <% end %>
+   
+    

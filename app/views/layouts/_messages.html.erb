@@ -1,0 +1,9 @@
+<div data-alert class="alert-box">
+<a href="#" class="close"> 
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <%= content_tag :div, msg, :class => "flash_#{name}" %>
+  <% end %>
+<% end %>
+</a>
+</div>

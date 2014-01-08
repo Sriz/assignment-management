@@ -1,0 +1,24 @@
+<% @page_title = 'Create Admin User' %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="user new">
+  <h2>Create Admin User</h2>
+
+  <%= form_for(:user, :url => {:action => 'create'}) do |f| %>
+
+   <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+ 
+    <div class="form-buttons">
+      <%= submit_tag('Create User') %>
+    </div>
+  
+  <% end %>
+</div>

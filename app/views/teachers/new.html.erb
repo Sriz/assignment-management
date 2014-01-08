@@ -1,0 +1,51 @@
+
+<%= link_to "<< Back to List", teachers_path %>
+
+<div class="subject new">
+  <h2>Add a New Teacher</h2>
+
+  <%= form_for(:teacher, :url => {:action => 'create', :id =>params[:id]}, :html => { :multipart => true}) do |f| %>
+  
+    <table summary="Students information">
+      <tr>
+        <th>First Name</th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><%= f.datetime_field(:last_name) %></td>
+      </tr>
+     
+      <tr>
+        <th>Gender</th>
+        <td>
+          <%= f.radio_button("gender", "male") %> Male <br>
+          <%= f.radio_button("gender", "female") %>Female
+          
+        </td>
+      </tr>
+       <tr>
+        <th>Address</th>
+        <td><%= f.text_field(:address) %></td>
+      </tr>
+      <tr>
+         <tr>
+        <th>Phone</th>
+        <td><%= f.phone_field(:phone) %></td>
+      </tr>
+      <tr>
+         <tr>
+        <th>Email</th>
+        <td> <%= f.email_field(:email) %></td>
+      </tr>
+      <tr>
+        <tr>
+          <th> Photo </th>
+          <td> <%= f.file_field(:avatar) %> </td>
+    </table>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Add Student") %>
+    </div>
+    
+  <% end %>
